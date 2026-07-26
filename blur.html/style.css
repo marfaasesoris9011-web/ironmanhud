@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#000;
+    overflow:hidden;
+}
+
+.container{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+}
+
+.input_video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scaleX(-1);
+    transition:filter .35s ease;
+}
+
+.output_canvas{
+    position:absolute;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    transform:scaleX(-1);
+}
+
+.blur{
+    filter:blur(22px) brightness(.9);
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+    padding-bottom:45px;
+    pointer-events:none;
+}
+
+.overlay h1{
+    position:absolute;
+    top:30px;
+    color:#fff;
+    font-size:34px;
+    text-shadow:0 0 20px rgba(255,255,255,.6);
+}
+
+#status{
+    color:#fff;
+    font-size:18px;
+    background:rgba(0,0,0,.45);
+    padding:14px 28px;
+    border-radius:999px;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+.flash{
+    animation:flash .35s;
+}
+
+@keyframes flash{
+
+0%{
+    opacity:1;
+}
+
+50%{
+    opacity:.3;
+}
+
+100%{
+    opacity:1;
+}
+
+}

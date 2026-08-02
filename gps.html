@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="tes()">Tes GPS</button>
+
+<script>
+function tes(){
+
+navigator.geolocation.getCurrentPosition(
+
+function(pos){
+
+alert(
+"GPS BERHASIL\n\n"+
+pos.coords.latitude+"\n"+
+pos.coords.longitude
+);
+
+},
+
+function(err){
+
+alert(
+"ERROR : "+err.code+"\n"+err.message
+);
+
+},
+
+{
+enableHighAccuracy:true,
+timeout:10000,
+maximumAge:0
+}
+
+);
+
+}
+</script>
+
+</body>
+</html>

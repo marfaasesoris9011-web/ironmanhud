@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RaceBox MVP</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b1220">
+<link rel="apple-touch-icon" href="IMG_20260802_131902.png">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h1>RACEBOX RAFFA NIH BOS</h1>
+
+<div class="card">
+
+<div class="box">
+<p>Kecepatan</p>
+<h2 id="speed">0</h2>
+<span>km/h</span>
+</div>
+
+<div class="box">
+<p>Timer</p>
+<h2 id="timer">00:00.000</h2>
+</div>
+
+<div class="box">
+<p>Jarak</p>
+<h2 id="distance">0.0 m</h2>
+</div>
+
+<div class="box">
+<p>Top Speed</p>
+<h2 id="topSpeed">0 km/h</h2>
+</div>
+
+<div class="box">
+<p>Status</p>
+<h2 id="status">READY</h2>
+</div>
+
+<div class="box">
+<p>Akurasi GPS</p>
+<h2 id="accuracy">-</h2>
+</div>
+
+<div class="box">
+<p>60 Meter</p>
+<h2 id="r60">--</h2>
+</div>
+
+<div class="box">
+<p>100 Meter</p>
+<h2 id="r100">--</h2>
+</div>
+
+<div class="box">
+<p>200 Meter</p>
+<h2 id="r200">--</h2>
+</div>
+
+<div class="box">
+<p>400 Meter</p>
+<h2 id="r400">--</h2>
+</div>
+
+<div class="box">
+<p>500 Meter</p>
+<h2 id="r500">--</h2>
+</div>
+
+<button id="resetBtn">RESET</button>
+
+</div>
+
+<div class="history">
+
+<h2>Riwayat</h2>
+
+<div id="historyList">
+
+<p>Belum ada data.</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js");
+    });
+}
+</script>
+
+</body>
+</html>

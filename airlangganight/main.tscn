@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://lgl0160dysnd"]
+
+[ext_resource type="Script" uid="uid://d2xrcucy5k7mi" path="res://05_scripts/map_generator.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cjg0igy7nps3l" path="res://04_scenes/player.tscn" id="2_0xm2m"]
+
+[sub_resource type="Environment" id="Environment_b7r77"]
+background_energy_multiplier = 0.0
+glow_enabled = true
+
+[node name="main" type="Node3D" unique_id=1439103561]
+script = ExtResource("1_ig7tw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1981527926]
+environment = SubResource("Environment_b7r77")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=474072992]
+light_color = Color(2.608085e-06, 0.018301278, 0.12697887, 1)
+light_energy = 0.2
+
+[node name="map" type="Node3D" parent="." unique_id=1686686779]
+
+[node name="Lantai_L1" type="CSGBox3D" parent="map" unique_id=1446331157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04398203, 0.00038957596, -0.058058262)
+use_collision = true
+size = Vector3(30, 0.2, 30)
+
+[node name="Dinding_Lab2" type="CSGBox3D" parent="map" unique_id=1385339629]
+transform = Transform3D(0.020933375, -0.018524587, 0.99960935, 0, 0.99982834, 0.018528648, -0.9997809, -0.00038786652, 0.020929754, 14.564522, 1.880762, 9.345622)
+use_collision = true
+size = Vector3(10, 4, 0.5)
+
+[node name="Dinding_Lab" type="CSGBox3D" parent="map/Dinding_Lab2" unique_id=594092622]
+transform = Transform3D(0.020933341, 5.8207647e-11, -0.9997808, -0.018524583, 0.9998282, -0.00038786704, 0.99960905, 0.018528644, 0.020929776, -5.7313614, 0.5027454, -24.357067)
+use_collision = true
+size = Vector3(10, 4, 0.5)
+
+[node name="Dinding_Lab5" type="CSGBox3D" parent="map" unique_id=1002831785]
+transform = Transform3D(0.020933375, -0.018524587, 0.99960935, 0, 0.99982834, 0.018528648, -0.9997809, -0.00038786652, 0.020929754, 14.711691, 1.8862114, -0.0042939186)
+use_collision = true
+size = Vector3(10, 4, 0.5)
+
+[node name="Dinding_Lab4" type="CSGBox3D" parent="map" unique_id=1636890688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.234738, 1.8677406, 14.616954)
+use_collision = true
+size = Vector3(10, 4, 0.5)
+
+[node name="Dinding_Lab3" type="CSGBox3D" parent="map" unique_id=900500687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.627439, 1.9084117, 14.578902)
+use_collision = true
+size = Vector3(10, 4, 0.5)
+
+[node name="player" parent="." unique_id=591823343 instance=ExtResource("2_0xm2m")]
